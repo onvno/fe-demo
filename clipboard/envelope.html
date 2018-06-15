@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>测试页面</title>
+</head>
+<body>
+<div id="copy" data-clipboard-text="测试剪切板">
+    <p>准备强奸
+        <br><br><br><br><br><br><br><br><br><br>
+        结束</p>
+</div>
+
+<script src="https://cdnjs.cat.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cat.net/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+<script>
+     $("body").onclick = copycode();
+
+    function copycode(){
+        var clipboard = new Clipboard('#copy');
+
+        clipboard.on('success', function (e)
+        {
+            alert("复制成功");
+        });
+        clipboard.on('error', function (e)
+        {
+            alert("复制失败");
+        });
+    }
+
+</script>
+</body>
+</html>
